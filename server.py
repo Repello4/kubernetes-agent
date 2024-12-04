@@ -50,7 +50,7 @@ def query_agent_api():
 
         validated_response = QueryResponse(query=query, answer=response['message'])
 
-        # Append the assistant's validated response to the conversation
+        # Append response
         conversation_store[session_id].append({
             "role": "assistant",
             "content": validated_response.answer
@@ -73,7 +73,7 @@ def get_kube_api():
         # Validate response using Pydantic
         validated_response = QueryResponse(
             query="Get Kubernetes Cluster Info",
-            answer=json.dumps(response)  # Ensure JSON string
+            answer=json.dumps(response) 
         )
 
         return jsonify({"cluster_info": validated_response.dict()})

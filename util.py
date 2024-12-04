@@ -83,7 +83,7 @@ def query_agent(conversation_history, query):
                             answer=json.dumps(content['cluster_info'])
                         )
                         
-                        # Append validated response to conversation
+                        # Append response to conversation
                         conversation_history.append({
                             "role": "tool",
                             "tool_call_id": tool_call_id,
@@ -108,7 +108,7 @@ def query_agent(conversation_history, query):
                     print(f"Error during tool execution: {e}")
                     return {"message": "An error occurred while processing the tool output."}
 
-        # Handle direct responses
+        # Validate the responses directly
         validated_response = QueryResponse(query=query, answer=response_message.content)
         conversation_history.append({"role": "assistant", "content": validated_response.answer})
         return {"message": validated_response.answer}
