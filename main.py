@@ -22,9 +22,14 @@ conversation_store['1'] = [{
         )
     }]
 
-logging.basicConfig(
-    level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s'  
-)
+logging.basicConfig(level=logging.DEBUG, 
+                    format='%(asctime)s %(levelname)s - %(message)s',
+                    filename='agent.log', filemode='a')
+
+
+# Example logging usage
+logging.info("Starting the application...")
+
 
 @app.route('/start_chat',methods=['POST'])
 def start_chat():
