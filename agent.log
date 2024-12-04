@@ -410,3 +410,4 @@
 2024-12-03 23:34:03,054 INFO - 127.0.0.1 - - [03/Dec/2024 23:34:03] "POST /query HTTP/1.1" 200 -
 2024-12-03 23:34:39,231 INFO -  * Detected change in 'C:\\Users\\Reason\\Desktop\\POST GRADUATION\\Job Search\\Cleric\\main.py', reloading
 2024-12-03 23:34:39,403 INFO -  * Restarting with stat
+2024-12-03 23:34:42,913 INFO -  * Restarting with stat
