@@ -22,9 +22,9 @@ conversation_store['1'] = [{
         )
     }]
 
-# logging.basicConfig(
-#     level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s'  
-# )
+logging.basicConfig(
+    level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s'  
+)
 
 @app.route('/start_chat',methods=['POST'])
 def start_chat():
@@ -90,4 +90,4 @@ def get_kube_api():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8000)
