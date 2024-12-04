@@ -13,7 +13,14 @@ class QueryResponse(BaseModel):
         query: str
         answer: str
 
-conversation_store['1'] = []
+conversation_store['1'] = [{
+        "role": "system",
+        "content": (
+            "You are a Kubernetes assistant that responds to queries with concise, "
+            "brief answers."
+            "Do not include extra details, only provide the essential information."
+        )
+    }]
 
 # logging.basicConfig(
 #     level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s'  
