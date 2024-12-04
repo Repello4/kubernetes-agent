@@ -3,7 +3,7 @@ from util import query_agent,get_cluster_information
 import json
 from uuid import uuid4
 import logging
-from pydantic import BaseModel
+from pydantic import BaseModel,ValidationError
 
 app = Flask(__name__)
 
@@ -49,10 +49,12 @@ def start_chat():
 def query_agent_api():
     data = request.json
     query = data.get('query')
+    logging.debug(f"Received query: {query}")
 
     session_id = '1'
 
     if not session_id or session_id not in conversation_store:
+        logging.error("Invalid or missing session ID")
         return jsonify({"error": "Invalid or missing session ID."}), 400
 
     conversation_store[session_id].append({"role": "user", "content": query})
@@ -61,7 +63,7 @@ def query_agent_api():
         response = query_agent(conversation_store[session_id], query)
 
         validated_response = QueryResponse(query=query, answer=response['message'])
-
+        logging.info(f"Assistant response: {response['message']}")
         # Append response
         conversation_store[session_id].append({
             "role": "assistant",
@@ -95,4 +97,4 @@ def get_kube_api():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000)
+    app.run(debug=True)

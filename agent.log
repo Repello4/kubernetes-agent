@@ -1,0 +1,66 @@
+2024-12-03 23:03:47,491 INFO - Starting the application...
+2024-12-03 23:03:47,502 INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.84:8000
+2024-12-03 23:03:47,502 INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 23:04:42,791 INFO - Starting the application...
+2024-12-03 23:04:42,802 INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.84:8000
+2024-12-03 23:04:42,802 INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 23:05:28,107 INFO - Starting the application...
+2024-12-03 23:05:28,118 INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.84:8000
+2024-12-03 23:05:28,118 INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 23:08:11,877 INFO - Starting the application...
+2024-12-03 23:08:11,889 INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.84:8000
+2024-12-03 23:08:11,890 INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 23:08:53,482 INFO - Starting the application...
+2024-12-03 23:08:53,499 INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.84:8000
+2024-12-03 23:08:53,499 INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 23:08:53,501 INFO -  * Restarting with stat
+2024-12-03 23:08:55,616 INFO - Starting the application...
+2024-12-03 23:08:55,626 WARNING -  * Debugger is active!
+2024-12-03 23:08:55,631 INFO -  * Debugger PIN: 798-604-046
+2024-12-03 23:09:32,023 INFO -  * Detected change in 'C:\\Users\\Reason\\Desktop\\POST GRADUATION\\Job Search\\Cleric\\main.py', reloading
+2024-12-03 23:09:32,184 INFO -  * Restarting with stat
+2024-12-03 23:10:43,143 INFO - Starting the application...
+2024-12-03 23:10:43,158 INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-03 23:10:43,158 INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 23:10:43,160 INFO -  * Restarting with stat
+2024-12-03 23:10:45,246 INFO - Starting the application...
+2024-12-03 23:10:45,255 WARNING -  * Debugger is active!
+2024-12-03 23:10:45,261 INFO -  * Debugger PIN: 798-604-046
+2024-12-03 23:10:55,433 DEBUG - Received query: hello
+2024-12-03 23:10:55,440 DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a Kubernetes assistant that responds to queries with concise, brief answers.Do not include extra details, only provide the essential information.'}, {'role': 'user', 'content': 'hello'}], 'model': 'gpt-4o-mini', 'tool_choice': 'auto', 'tools': [{'type': 'function', 'function': {'name': 'get_cluster_information', 'description': 'Use this function to get information about the Kubernetes cluster', 'parameters': {'type': 'object', 'properties': {'query': {'type': 'string', 'description': 'This is the query from the user'}, 'answer': {'type': 'string', 'description': "The assistant's answer to the query"}}, 'required': ['query', 'answer']}}}]}}
+2024-12-03 23:10:55,461 DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2024-12-03 23:10:55,461 DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-03 23:10:55,532 DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000195B33C2770>
+2024-12-03 23:10:55,532 DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000195B328C0C0> server_hostname='api.openai.com' timeout=5.0
+2024-12-03 23:10:55,571 DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000195B33C2800>
+2024-12-03 23:10:55,571 DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-03 23:10:55,572 DEBUG - send_request_headers.complete
+2024-12-03 23:10:55,572 DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-03 23:10:55,572 DEBUG - send_request_body.complete
+2024-12-03 23:10:55,572 DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-03 23:10:56,453 DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 04 Dec 2024 07:10:55 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-9rrum9u9hev9vwb50ku6dbbv'), (b'openai-processing-ms', b'585'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199942'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'17ms'), (b'x-request-id', b'req_b64758f198bde1499d5013de52f12c26'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=JMZaiwFzWEudsm3D2ewbJAjiwr03JpX60IXByn0WarQ-1733296255-1.0.1.1-IL9KYVUlILSIXRWI.nLeqjljWNhJ.G4uO0dXZWhk7EEBZM55W89WZKXYJjEq1bnsADNYVldgRWJcT4MOiQZI8A; path=/; expires=Wed, 04-Dec-24 07:40:55 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=62fLimySkvzGqkMWBzbn3_Uw0Eb1sq6QlR3u9xaibTU-1733296255785-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8ec9fab95c4aebe3-SJC'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-12-03 23:10:56,454 INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-03 23:10:56,454 DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-03 23:10:56,454 DEBUG - receive_response_body.complete
+2024-12-03 23:10:56,454 DEBUG - response_closed.started
+2024-12-03 23:10:56,454 DEBUG - response_closed.complete
+2024-12-03 23:10:56,455 DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Wed, 04 Dec 2024 07:10:55 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-9rrum9u9hev9vwb50ku6dbbv'), ('openai-processing-ms', '585'), ('openai-version', '2020-10-01'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9999'), ('x-ratelimit-remaining-tokens', '199942'), ('x-ratelimit-reset-requests', '8.64s'), ('x-ratelimit-reset-tokens', '17ms'), ('x-request-id', 'req_b64758f198bde1499d5013de52f12c26'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=JMZaiwFzWEudsm3D2ewbJAjiwr03JpX60IXByn0WarQ-1733296255-1.0.1.1-IL9KYVUlILSIXRWI.nLeqjljWNhJ.G4uO0dXZWhk7EEBZM55W89WZKXYJjEq1bnsADNYVldgRWJcT4MOiQZI8A; path=/; expires=Wed, 04-Dec-24 07:40:55 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=62fLimySkvzGqkMWBzbn3_Uw0Eb1sq6QlR3u9xaibTU-1733296255785-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '8ec9fab95c4aebe3-SJC'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2024-12-03 23:10:56,455 DEBUG - request_id: req_b64758f198bde1499d5013de52f12c26
+2024-12-03 23:10:56,460 INFO - Assistant response: Hello! How can I assist you with Kubernetes today?
+2024-12-03 23:10:56,461 INFO - 127.0.0.1 - - [03/Dec/2024 23:10:56] "POST /query HTTP/1.1" 200 -
