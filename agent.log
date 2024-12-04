@@ -64,3 +64,26 @@
 2024-12-03 23:10:56,455 DEBUG - request_id: req_b64758f198bde1499d5013de52f12c26
 2024-12-03 23:10:56,460 INFO - Assistant response: Hello! How can I assist you with Kubernetes today?
 2024-12-03 23:10:56,461 INFO - 127.0.0.1 - - [03/Dec/2024 23:10:56] "POST /query HTTP/1.1" 200 -
+2024-12-03 23:11:24,190 INFO - Starting the application...
+2024-12-03 23:11:24,206 INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-03 23:11:24,206 INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 23:11:24,207 INFO -  * Restarting with stat
+2024-12-03 23:11:26,325 INFO - Starting the application...
+2024-12-03 23:11:26,334 WARNING -  * Debugger is active!
+2024-12-03 23:11:26,340 INFO -  * Debugger PIN: 798-604-046
+2024-12-03 23:13:53,021 INFO -  * Detected change in 'C:\\Users\\Reason\\Desktop\\POST GRADUATION\\Job Search\\Cleric\\main.py', reloading
+2024-12-03 23:13:53,238 INFO -  * Restarting with stat
+2024-12-03 23:13:55,556 INFO - Starting the application...
+2024-12-03 23:13:55,566 WARNING -  * Debugger is active!
+2024-12-03 23:13:55,572 INFO -  * Debugger PIN: 798-604-046
+2024-12-03 23:14:08,735 INFO -  * Detected change in 'C:\\Users\\Reason\\Desktop\\POST GRADUATION\\Job Search\\Cleric\\util.py', reloading
+2024-12-03 23:14:08,907 INFO -  * Restarting with stat
+2024-12-03 23:14:11,321 INFO - Starting the application...
+2024-12-03 23:14:11,330 WARNING -  * Debugger is active!
+2024-12-03 23:14:11,336 INFO -  * Debugger PIN: 798-604-046
+2024-12-03 23:14:18,451 INFO -  * Detected change in 'C:\\Users\\Reason\\Desktop\\POST GRADUATION\\Job Search\\Cleric\\util.py', reloading
+2024-12-03 23:14:18,619 INFO -  * Restarting with stat
+2024-12-03 23:14:20,832 INFO - Starting the application...
+2024-12-03 23:14:20,841 WARNING -  * Debugger is active!
+2024-12-03 23:14:20,846 INFO -  * Debugger PIN: 798-604-046

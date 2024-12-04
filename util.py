@@ -73,7 +73,7 @@ def query_agent(conversation_history, query):
 
             if tool_call_function == 'get_cluster_information':
                 try:
-                    response_test = requests.get('http://localhost:5000/get_kube_api')
+                    response_test = requests.get('http://127.0.0.1:8000/get_kube_api')
                     if response_test.status_code == 200:
                         content = response_test.json()
                         
