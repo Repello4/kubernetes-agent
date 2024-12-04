@@ -70,7 +70,7 @@ def query_agent_api():
             "content": validated_response.answer
         })
 
-        return jsonify({"response": validated_response.dict()})  
+        return jsonify({"response": validated_response.model_dump()})  
 
     except Exception as e:
         logging.error(f"Error in /query: {e}")
@@ -90,7 +90,7 @@ def get_kube_api():
             answer=json.dumps(response) 
         )
 
-        return jsonify({"cluster_info": validated_response.dict()})
+        return jsonify({"cluster_info": validated_response.model_dump()})
     except Exception as e:
         logging.error(f"Error in /get_kube_api: {e}")
         return jsonify({"error": str(e)}), 500

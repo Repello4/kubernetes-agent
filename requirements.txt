@@ -1,0 +1,8 @@
+requests
+flask
+pydantic
+uuid
+tenacity
+kubernetes
+openai
+requests

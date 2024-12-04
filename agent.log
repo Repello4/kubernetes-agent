@@ -87,3 +87,165 @@
 2024-12-03 23:14:20,832 INFO - Starting the application...
 2024-12-03 23:14:20,841 WARNING -  * Debugger is active!
 2024-12-03 23:14:20,846 INFO -  * Debugger PIN: 798-604-046
+2024-12-03 23:15:07,793 INFO - Starting the application...
+2024-12-03 23:15:07,811 INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.84:8000
+2024-12-03 23:15:07,811 INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 23:15:07,812 INFO -  * Restarting with stat
+2024-12-03 23:15:10,059 INFO - Starting the application...
+2024-12-03 23:15:10,068 WARNING -  * Debugger is active!
+2024-12-03 23:15:10,073 INFO -  * Debugger PIN: 798-604-046
+2024-12-03 23:15:26,492 DEBUG - Received query: hello
+2024-12-03 23:15:26,499 DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a Kubernetes assistant that responds to queries with concise, brief answers.Do not include extra details, only provide the essential information.'}, {'role': 'user', 'content': 'hello'}], 'model': 'gpt-4o-mini', 'tool_choice': 'auto', 'tools': [{'type': 'function', 'function': {'name': 'get_cluster_information', 'description': 'Use this function to get information about the Kubernetes cluster', 'parameters': {'type': 'object', 'properties': {'query': {'type': 'string', 'description': 'This is the query from the user'}, 'answer': {'type': 'string', 'description': "The assistant's answer to the query"}}, 'required': ['query', 'answer']}}}]}}
+2024-12-03 23:15:26,520 DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2024-12-03 23:15:26,521 DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-03 23:15:26,586 DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002D831A564D0>
+2024-12-03 23:15:26,586 DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002D83191C0C0> server_hostname='api.openai.com' timeout=5.0
+2024-12-03 23:15:26,624 DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002D831A56560>
+2024-12-03 23:15:26,625 DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-03 23:15:26,625 DEBUG - send_request_headers.complete
+2024-12-03 23:15:26,625 DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-03 23:15:26,625 DEBUG - send_request_body.complete
+2024-12-03 23:15:26,625 DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-03 23:15:26,991 DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 04 Dec 2024 07:15:26 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-9rrum9u9hev9vwb50ku6dbbv'), (b'openai-processing-ms', b'293'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199942'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'17ms'), (b'x-request-id', b'req_ba676fc2303aa59bbec3f6662315aa9d'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=xvXMrPWlW1LMMRvGjuvrQn6Y4dBZ2dBwqGJyDUOWMw4-1733296526-1.0.1.1-dPBtfDmts9Jg4tc2R_eJOrCyDuD4J38I_qxrtgIUVuvMAeHd3eFsWfwu3LKSr8Fgv7MZ0akIOuxaKitlr64ksg; path=/; expires=Wed, 04-Dec-24 07:45:26 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=e38pbZMJHZL0jCW_9JavQz5YcTKvUB5li7mHACcJISI-1733296526320-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8eca01576e4deb2c-SJC'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-12-03 23:15:26,992 INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-03 23:15:26,992 DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-03 23:15:26,992 DEBUG - receive_response_body.complete
+2024-12-03 23:15:26,993 DEBUG - response_closed.started
+2024-12-03 23:15:26,993 DEBUG - response_closed.complete
+2024-12-03 23:15:26,993 DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Wed, 04 Dec 2024 07:15:26 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-9rrum9u9hev9vwb50ku6dbbv'), ('openai-processing-ms', '293'), ('openai-version', '2020-10-01'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9999'), ('x-ratelimit-remaining-tokens', '199942'), ('x-ratelimit-reset-requests', '8.64s'), ('x-ratelimit-reset-tokens', '17ms'), ('x-request-id', 'req_ba676fc2303aa59bbec3f6662315aa9d'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=xvXMrPWlW1LMMRvGjuvrQn6Y4dBZ2dBwqGJyDUOWMw4-1733296526-1.0.1.1-dPBtfDmts9Jg4tc2R_eJOrCyDuD4J38I_qxrtgIUVuvMAeHd3eFsWfwu3LKSr8Fgv7MZ0akIOuxaKitlr64ksg; path=/; expires=Wed, 04-Dec-24 07:45:26 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=e38pbZMJHZL0jCW_9JavQz5YcTKvUB5li7mHACcJISI-1733296526320-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '8eca01576e4deb2c-SJC'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2024-12-03 23:15:26,993 DEBUG - request_id: req_ba676fc2303aa59bbec3f6662315aa9d
+2024-12-03 23:15:26,999 INFO - Assistant response: Hello! How can I assist you today?
+2024-12-03 23:15:27,000 INFO - 127.0.0.1 - - [03/Dec/2024 23:15:27] "POST /query HTTP/1.1" 200 -
+2024-12-03 23:16:04,791 INFO - Starting the application...
+2024-12-03 23:16:04,808 INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.84:8000
+2024-12-03 23:16:04,808 INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 23:16:04,810 INFO -  * Restarting with stat
+2024-12-03 23:16:07,123 INFO - Starting the application...
+2024-12-03 23:16:07,133 WARNING -  * Debugger is active!
+2024-12-03 23:16:07,139 INFO -  * Debugger PIN: 798-604-046
+2024-12-03 23:29:59,934 DEBUG - Received query: hello
+2024-12-03 23:29:59,942 DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a Kubernetes assistant that responds to queries with concise, brief answers.Do not include extra details, only provide the essential information.'}, {'role': 'user', 'content': 'hello'}], 'model': 'gpt-4o-mini', 'tool_choice': 'auto', 'tools': [{'type': 'function', 'function': {'name': 'get_cluster_information', 'description': 'Use this function to get information about the Kubernetes cluster', 'parameters': {'type': 'object', 'properties': {'query': {'type': 'string', 'description': 'This is the query from the user'}, 'answer': {'type': 'string', 'description': "The assistant's answer to the query"}}, 'required': ['query', 'answer']}}}]}}
+2024-12-03 23:29:59,968 DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2024-12-03 23:29:59,969 DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-03 23:30:00,060 DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000273B2AC6560>
+2024-12-03 23:30:00,061 DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000273B298C0C0> server_hostname='api.openai.com' timeout=5.0
+2024-12-03 23:30:00,103 DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000273B2AC65F0>
+2024-12-03 23:30:00,103 DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-03 23:30:00,103 DEBUG - send_request_headers.complete
+2024-12-03 23:30:00,103 DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-03 23:30:00,103 DEBUG - send_request_body.complete
+2024-12-03 23:30:00,103 DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-03 23:30:02,259 DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 04 Dec 2024 07:30:01 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-9rrum9u9hev9vwb50ku6dbbv'), (b'openai-processing-ms', b'1501'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199942'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'17ms'), (b'x-request-id', b'req_0d7ca54bd024495f2c65268af867feb7'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=AsMU3hdy9rrjYp.2n7MiIt7sYt3c1DoNCdfXRE9rXc4-1733297401-1.0.1.1-e17gKNFX6onIUgWvFprocwCRieGsYsaFESdjBkg_WqYZUeF63cMkEfQEqG0bxR2iSQVO0RwXOjFEfxeXxkMS.g; path=/; expires=Wed, 04-Dec-24 08:00:01 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=YYF9H4awNTsqL477q_MNOZLS3pBPsjD0.YZJBPf0MA0-1733297401576-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8eca16aa98c32506-SJC'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-12-03 23:30:02,260 INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-03 23:30:02,260 DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-03 23:30:02,260 DEBUG - receive_response_body.complete
+2024-12-03 23:30:02,260 DEBUG - response_closed.started
+2024-12-03 23:30:02,260 DEBUG - response_closed.complete
+2024-12-03 23:30:02,261 DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Wed, 04 Dec 2024 07:30:01 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-9rrum9u9hev9vwb50ku6dbbv'), ('openai-processing-ms', '1501'), ('openai-version', '2020-10-01'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9999'), ('x-ratelimit-remaining-tokens', '199942'), ('x-ratelimit-reset-requests', '8.64s'), ('x-ratelimit-reset-tokens', '17ms'), ('x-request-id', 'req_0d7ca54bd024495f2c65268af867feb7'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=AsMU3hdy9rrjYp.2n7MiIt7sYt3c1DoNCdfXRE9rXc4-1733297401-1.0.1.1-e17gKNFX6onIUgWvFprocwCRieGsYsaFESdjBkg_WqYZUeF63cMkEfQEqG0bxR2iSQVO0RwXOjFEfxeXxkMS.g; path=/; expires=Wed, 04-Dec-24 08:00:01 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=YYF9H4awNTsqL477q_MNOZLS3pBPsjD0.YZJBPf0MA0-1733297401576-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '8eca16aa98c32506-SJC'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2024-12-03 23:30:02,261 DEBUG - request_id: req_0d7ca54bd024495f2c65268af867feb7
+2024-12-03 23:30:02,266 INFO - Assistant response: Hello! How can I assist you today with Kubernetes?
+2024-12-03 23:30:14,868 INFO - 127.0.0.1 - - [03/Dec/2024 23:30:14] "POST /query HTTP/1.1" 200 -
+2024-12-03 23:30:25,535 INFO - Starting the application...
+2024-12-03 23:30:25,554 INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.84:8000
+2024-12-03 23:30:25,554 INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 23:30:25,556 INFO -  * Restarting with stat
+2024-12-03 23:30:27,728 INFO - Starting the application...
+2024-12-03 23:30:27,738 WARNING -  * Debugger is active!
+2024-12-03 23:30:27,744 INFO -  * Debugger PIN: 798-604-046
+2024-12-03 23:30:29,429 DEBUG - Received query: hello
+2024-12-03 23:30:29,436 DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a Kubernetes assistant that responds to queries with concise, brief answers.Do not include extra details, only provide the essential information.'}, {'role': 'user', 'content': 'hello'}], 'model': 'gpt-4o-mini', 'tool_choice': 'auto', 'tools': [{'type': 'function', 'function': {'name': 'get_cluster_information', 'description': 'Use this function to get information about the Kubernetes cluster', 'parameters': {'type': 'object', 'properties': {'query': {'type': 'string', 'description': 'This is the query from the user'}, 'answer': {'type': 'string', 'description': "The assistant's answer to the query"}}, 'required': ['query', 'answer']}}}]}}
+2024-12-03 23:30:29,468 DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2024-12-03 23:30:29,468 DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-03 23:30:29,539 DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000017E044366B0>
+2024-12-03 23:30:29,540 DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000017E043000C0> server_hostname='api.openai.com' timeout=5.0
+2024-12-03 23:30:29,582 DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000017E04436740>
+2024-12-03 23:30:29,582 DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-03 23:30:29,582 DEBUG - send_request_headers.complete
+2024-12-03 23:30:29,582 DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-03 23:30:29,582 DEBUG - send_request_body.complete
+2024-12-03 23:30:29,582 DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-03 23:30:30,195 DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 04 Dec 2024 07:30:29 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-9rrum9u9hev9vwb50ku6dbbv'), (b'openai-processing-ms', b'524'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199942'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'17ms'), (b'x-request-id', b'req_0e7c9a1fa416ee25708ff56da212bd6a'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=fU.dVOjYIXYrs50ZeMmnLP.NhbazRf_QH58LUINywq8-1733297429-1.0.1.1-xT4_CQTSDj40okKyt5i7kaqgI6YGKoqdt0aNVwQYUkOzUr_5hINEeGYJVqPARUYO4XdcVWr4Fh66G.PiysPZhw; path=/; expires=Wed, 04-Dec-24 08:00:29 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=mmJFoBjNW1d9Yv409ehb6PhU2Q9r3OldSF45JE2aeAc-1733297429511-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8eca1762d98867f6-SJC'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-12-03 23:30:30,196 INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-03 23:30:30,196 DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-03 23:30:30,196 DEBUG - receive_response_body.complete
+2024-12-03 23:30:30,196 DEBUG - response_closed.started
+2024-12-03 23:30:30,196 DEBUG - response_closed.complete
+2024-12-03 23:30:30,197 DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Wed, 04 Dec 2024 07:30:29 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-9rrum9u9hev9vwb50ku6dbbv'), ('openai-processing-ms', '524'), ('openai-version', '2020-10-01'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9999'), ('x-ratelimit-remaining-tokens', '199942'), ('x-ratelimit-reset-requests', '8.64s'), ('x-ratelimit-reset-tokens', '17ms'), ('x-request-id', 'req_0e7c9a1fa416ee25708ff56da212bd6a'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=fU.dVOjYIXYrs50ZeMmnLP.NhbazRf_QH58LUINywq8-1733297429-1.0.1.1-xT4_CQTSDj40okKyt5i7kaqgI6YGKoqdt0aNVwQYUkOzUr_5hINEeGYJVqPARUYO4XdcVWr4Fh66G.PiysPZhw; path=/; expires=Wed, 04-Dec-24 08:00:29 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=mmJFoBjNW1d9Yv409ehb6PhU2Q9r3OldSF45JE2aeAc-1733297429511-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '8eca1762d98867f6-SJC'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2024-12-03 23:30:30,197 DEBUG - request_id: req_0e7c9a1fa416ee25708ff56da212bd6a
+2024-12-03 23:30:30,202 INFO - Assistant response: Hello! How can I assist you today with Kubernetes?
+2024-12-03 23:30:30,203 INFO - 127.0.0.1 - - [03/Dec/2024 23:30:30] "POST /query HTTP/1.1" 200 -
+2024-12-03 23:31:26,377 INFO -  * Detected change in 'C:\\Users\\Reason\\Desktop\\POST GRADUATION\\Job Search\\Cleric\\main.py', reloading
+2024-12-03 23:31:26,574 INFO -  * Restarting with stat
+2024-12-03 23:31:28,753 INFO - Starting the application...
+2024-12-03 23:31:28,762 WARNING -  * Debugger is active!
+2024-12-03 23:31:28,768 INFO -  * Debugger PIN: 798-604-046
+2024-12-03 23:31:31,817 INFO -  * Detected change in 'C:\\Users\\Reason\\Desktop\\POST GRADUATION\\Job Search\\Cleric\\main.py', reloading
+2024-12-03 23:31:32,003 INFO -  * Restarting with stat
+2024-12-03 23:31:34,253 INFO - Starting the application...
+2024-12-03 23:31:34,261 WARNING -  * Debugger is active!
+2024-12-03 23:31:34,267 INFO -  * Debugger PIN: 798-604-046
+2024-12-03 23:31:37,917 INFO - Starting the application...
+2024-12-03 23:31:37,935 INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.84:8000
+2024-12-03 23:31:37,935 INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 23:31:37,936 INFO -  * Restarting with stat
+2024-12-03 23:31:40,323 INFO - Starting the application...
+2024-12-03 23:31:40,332 WARNING -  * Debugger is active!
+2024-12-03 23:31:40,338 INFO -  * Debugger PIN: 798-604-046
+2024-12-03 23:31:44,313 DEBUG - Received query: hello
+2024-12-03 23:31:44,321 DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a Kubernetes assistant that responds to queries with concise, brief answers.Do not include extra details, only provide the essential information.'}, {'role': 'user', 'content': 'hello'}], 'model': 'gpt-4o-mini', 'tool_choice': 'auto', 'tools': [{'type': 'function', 'function': {'name': 'get_cluster_information', 'description': 'Use this function to get information about the Kubernetes cluster', 'parameters': {'type': 'object', 'properties': {'query': {'type': 'string', 'description': 'This is the query from the user'}, 'answer': {'type': 'string', 'description': "The assistant's answer to the query"}}, 'required': ['query', 'answer']}}}]}}
+2024-12-03 23:31:44,349 DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2024-12-03 23:31:44,350 DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-03 23:31:44,426 DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021074A429E0>
+2024-12-03 23:31:44,426 DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002107490C0C0> server_hostname='api.openai.com' timeout=5.0
+2024-12-03 23:31:44,466 DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021074A42A70>
+2024-12-03 23:31:44,467 DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-03 23:31:44,467 DEBUG - send_request_headers.complete
+2024-12-03 23:31:44,467 DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-03 23:31:44,467 DEBUG - send_request_body.complete
+2024-12-03 23:31:44,467 DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-03 23:31:44,983 DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 04 Dec 2024 07:31:44 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-9rrum9u9hev9vwb50ku6dbbv'), (b'openai-processing-ms', b'410'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199942'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'17ms'), (b'x-request-id', b'req_ecda9560a6d092848bade03dfde7f175'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=MWDFW5VhSiuKdpD2Lhk438OTAY7lOygbCW.35NRRnzk-1733297504-1.0.1.1-yHG1i2q.KgrRQsnLiLhgPnfEKSPssRXKP7q1L3m6fAyKGmStuiZgcrpUnvCbqap2iQuZ4i6jKovlRq7_prYRgw; path=/; expires=Wed, 04-Dec-24 08:01:44 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=93GdZUfOazi1oZoVJxlr3SoNWp.41rfyKNY9p0O5Owg-1733297504299-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8eca1936dd762510-SJC'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-12-03 23:31:44,984 INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-03 23:31:44,985 DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-03 23:31:44,985 DEBUG - receive_response_body.complete
+2024-12-03 23:31:44,985 DEBUG - response_closed.started
+2024-12-03 23:31:44,985 DEBUG - response_closed.complete
+2024-12-03 23:31:44,985 DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Wed, 04 Dec 2024 07:31:44 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-9rrum9u9hev9vwb50ku6dbbv'), ('openai-processing-ms', '410'), ('openai-version', '2020-10-01'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9999'), ('x-ratelimit-remaining-tokens', '199942'), ('x-ratelimit-reset-requests', '8.64s'), ('x-ratelimit-reset-tokens', '17ms'), ('x-request-id', 'req_ecda9560a6d092848bade03dfde7f175'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=MWDFW5VhSiuKdpD2Lhk438OTAY7lOygbCW.35NRRnzk-1733297504-1.0.1.1-yHG1i2q.KgrRQsnLiLhgPnfEKSPssRXKP7q1L3m6fAyKGmStuiZgcrpUnvCbqap2iQuZ4i6jKovlRq7_prYRgw; path=/; expires=Wed, 04-Dec-24 08:01:44 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=93GdZUfOazi1oZoVJxlr3SoNWp.41rfyKNY9p0O5Owg-1733297504299-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '8eca1936dd762510-SJC'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2024-12-03 23:31:44,986 DEBUG - request_id: req_ecda9560a6d092848bade03dfde7f175
+2024-12-03 23:31:44,991 INFO - Assistant response: Hello! How can I assist you with Kubernetes today?
+2024-12-03 23:31:44,991 INFO - 127.0.0.1 - - [03/Dec/2024 23:31:44] "POST /query HTTP/1.1" 200 -
+2024-12-03 23:32:33,443 DEBUG - Received query: Im just chillin how about you
+2024-12-03 23:32:33,453 DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a Kubernetes assistant that responds to queries with concise, brief answers.Do not include extra details, only provide the essential information.'}, {'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Hello! How can I assist you with Kubernetes today?'}, {'role': 'assistant', 'content': 'Hello! How can I assist you with Kubernetes today?'}, {'role': 'user', 'content': 'Im just chillin how about you'}], 'model': 'gpt-4o-mini', 'tool_choice': 'auto', 'tools': [{'type': 'function', 'function': {'name': 'get_cluster_information', 'description': 'Use this function to get information about the Kubernetes cluster', 'parameters': {'type': 'object', 'properties': {'query': {'type': 'string', 'description': 'This is the query from the user'}, 'answer': {'type': 'string', 'description': "The assistant's answer to the query"}}, 'required': ['query', 'answer']}}}]}}
+2024-12-03 23:32:33,454 DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2024-12-03 23:32:33,454 DEBUG - close.started
+2024-12-03 23:32:33,454 DEBUG - close.complete
+2024-12-03 23:32:33,455 DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-03 23:32:33,515 DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021074A9EC50>
+2024-12-03 23:32:33,515 DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002107490C0C0> server_hostname='api.openai.com' timeout=5.0
+2024-12-03 23:32:33,555 DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021074A9ED10>
+2024-12-03 23:32:33,555 DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-03 23:32:33,555 DEBUG - send_request_headers.complete
+2024-12-03 23:32:33,555 DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-03 23:32:33,555 DEBUG - send_request_body.complete
+2024-12-03 23:32:33,555 DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-03 23:32:50,134 DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 04 Dec 2024 07:32:49 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-9rrum9u9hev9vwb50ku6dbbv'), (b'openai-processing-ms', b'16485'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199907'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'27ms'), (b'x-request-id', b'req_106252e6cdd8cc29528c76bb8e06b108'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8eca1a69ad7fcf1a-SJC'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-12-03 23:32:50,135 INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-03 23:32:50,135 DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-03 23:32:50,135 DEBUG - receive_response_body.complete
+2024-12-03 23:32:50,135 DEBUG - response_closed.started
+2024-12-03 23:32:50,135 DEBUG - response_closed.complete
+2024-12-03 23:32:50,136 DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Wed, 04 Dec 2024 07:32:49 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-9rrum9u9hev9vwb50ku6dbbv', 'openai-processing-ms': '16485', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '9999', 'x-ratelimit-remaining-tokens': '199907', 'x-ratelimit-reset-requests': '8.64s', 'x-ratelimit-reset-tokens': '27ms', 'x-request-id': 'req_106252e6cdd8cc29528c76bb8e06b108', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '8eca1a69ad7fcf1a-SJC', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2024-12-03 23:32:50,136 DEBUG - request_id: req_106252e6cdd8cc29528c76bb8e06b108
+2024-12-03 23:32:50,136 INFO - Assistant response: I'm here to help with any Kubernetes questions you may have!
+2024-12-03 23:32:50,137 INFO - 127.0.0.1 - - [03/Dec/2024 23:32:50] "POST /query HTTP/1.1" 200 -
