@@ -27,6 +27,7 @@ logging.info("Starting the application...")
 
 
 @app.route('/start_chat',methods=['POST'])
+
 def start_chat():
 
     session_id = str(uuid4())
