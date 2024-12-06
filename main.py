@@ -72,6 +72,16 @@ def query_agent_api():
         logging.error(f"Error in /query: {e}")
         return jsonify({'error': str(e)}), 500
 
+@app.route('/logs', methods=['GET'])
+def get_logs():
+    try:
+        with open("agent.log", "r") as log_file:
+            logs = log_file.read()
+        return logs, 200
+    except FileNotFoundError:
+        return "Log file not found.", 404
+    except Exception as e:
+        return f"Error reading log file: {str(e)}", 500
 
 
 @app.route('/get_kube_api',methods = ['GET'])
