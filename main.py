@@ -6,6 +6,10 @@ import logging
 from pydantic import BaseModel,ValidationError
 
 
+logging.basicConfig(level=logging.DEBUG, 
+                    format='%(asctime)s %(levelname)s - %(message)s',
+                    filename='agent.log', filemode='a')
+
 app = Flask(__name__)
 
 
