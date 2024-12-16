@@ -5,7 +5,9 @@ from uuid import uuid4
 import logging
 from pydantic import BaseModel,ValidationError
 
+
 app = Flask(__name__)
+
 
 ## THis is the conversation history, inplace for multiple user testing
 conversation_store = {}
