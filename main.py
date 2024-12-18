@@ -74,7 +74,7 @@ def query_agent_api():
             "content": validated_response.answer
         })
 
-        return jsonify({"response": validated_response.model_dump()})  
+        return jsonify(validated_response.model_dump())  
 
     except Exception as e:
         logging.error(f"Error in /query: {e}")
