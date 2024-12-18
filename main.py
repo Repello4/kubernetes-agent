@@ -7,9 +7,14 @@ from pydantic import BaseModel,ValidationError
 import os
 
 
-logging.basicConfig(level=logging.DEBUG, 
+# Set the logging level for the root logger to INFO to avoid debug logs from other libraries
+logging.basicConfig(level=logging.INFO, 
                     format='%(asctime)s %(levelname)s - %(message)s',
                     filename='agent.log', filemode='a')
+
+# Set the logging level for your specific logger to DEBUG
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 app = Flask(__name__)
 
@@ -34,7 +39,7 @@ conversation_store['1'] = [{
     }]
 
 
-logging.info("Starting the application...")
+logger.info("Starting the application...")
 
 
 @app.route('/start_chat',methods=['POST'])
@@ -56,12 +61,12 @@ def start_chat():
 def query_agent_api():
     data = request.json
     query = data.get('query')
-    logging.debug(f"Received query: {query}")
+    logger.debug(f"Received query: {query}")
 
     session_id = '1'
 
     if not session_id or session_id not in conversation_store:
-        logging.error("Invalid or missing session ID")
+        logger.error("Invalid or missing session ID")
         return jsonify({"error": "Invalid or missing session ID."}), 400
 
     conversation_store[session_id].append({"role": "user", "content": query})
@@ -70,7 +75,8 @@ def query_agent_api():
         response = query_agent(conversation_store[session_id], query)
 
         validated_response = QueryResponse(query=query, answer=response['message'])
-        logging.info(f"Assistant response: {response['message']}")
+        logger.info(f"User query: {query}")
+        logger.info(f"Assistant response: {response['message']}")
         # Append response
         conversation_store[session_id].append({
             "role": "assistant",
@@ -80,7 +86,7 @@ def query_agent_api():
         return jsonify(validated_response.model_dump())  
 
     except Exception as e:
-        logging.error(f"Error in /query: {e}")
+        logger.error(f"Error in /query: {e}")
         return jsonify({'error': str(e)}), 500
 
 @app.route('/logs', methods=['GET'])
@@ -109,7 +115,7 @@ def get_kube_api():
 
         return jsonify({"cluster_info": validated_response.model_dump()})
     except Exception as e:
-        logging.error(f"Error in /get_kube_api: {e}")
+        logger.error(f"Error in /get_kube_api: {e}")
         return jsonify({"error": str(e)}), 500
 
 
