@@ -8,9 +8,9 @@ import os
 import pprint
 from tenacity import retry, wait_random_exponential, stop_after_attempt
 from kubernetes import client,config
+from config import get_api_key
 
-
-API_KEY = os.getenv("OPENAI_API_KEY")
+API_KEY = get_api_key()
 openai_client = OpenAI(api_key=API_KEY)
 GPT_MODEL = 'gpt-4o-mini'
 

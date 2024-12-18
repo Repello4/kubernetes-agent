@@ -4,6 +4,7 @@ import json
 from uuid import uuid4
 import logging
 from pydantic import BaseModel,ValidationError
+import os
 
 
 logging.basicConfig(level=logging.DEBUG, 
