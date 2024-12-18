@@ -27,6 +27,9 @@ conversation_store['1'] = [{
             "You are a Kubernetes assistant that responds to queries with concise, "
             "brief answers."
             "Do not include extra details, only provide the essential information."
+            "Examples: Q: Which pod is spawned by my-deployment? A: my-pod"
+            "Q: What is the status of the pod named 'example-pod'? A: Running"
+            "Q: How many nodes are there in the cluster? A: 2 "
         )
     }]
 
