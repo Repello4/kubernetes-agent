@@ -12,7 +12,7 @@ from config import get_api_key
 
 API_KEY = get_api_key()
 openai_client = OpenAI(api_key=API_KEY)
-GPT_MODEL = 'gpt-4o-mini'
+GPT_MODEL = 'gpt-4o-2024-08-06'
 
 #Pydantic Model
 class QueryResponse(BaseModel):
