@@ -194,7 +194,7 @@ def get_pod_info(namespace="default"):
                 "env": [{"name": env.name, "value": env.value} for env in container.env or []],
                 "readinessProbe": container.readiness_probe.http_get.path if container.readiness_probe and container.readiness_probe.http_get else None,
                 "livenessProbe": container.liveness_probe.http_get.path if container.liveness_probe and container.liveness_probe.http_get else None,
-            })
+            })#End of container info
 
 
 
