@@ -2,7 +2,7 @@ from flask import Flask,request,jsonify
 from util import query_agent,get_cluster_information
 import json
 from uuid import uuid4
-import logging
+import logging 
 from pydantic import BaseModel,ValidationError
 import os
 
@@ -117,7 +117,7 @@ def get_kube_api():
             query="Get Kubernetes Cluster Info",
             answer=json.dumps(response) 
         )
-
+        logger.info('Cluster Info: %s',response)
         return jsonify({"cluster_info": validated_response.model_dump()})
     except Exception as e:
         logger.error(f"Error in /get_kube_api: {e}")
