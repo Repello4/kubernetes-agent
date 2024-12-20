@@ -184,11 +184,31 @@ def get_pod_info(namespace="default"):
 
     for pod in pods.items:
 
+        containers = []
+
+        for container in pod.spec.containers:
+            containers.append({
+                "name": container.name,
+                "image": container.image,
+                "ports": container.ports,
+                "env": [{"name": env.name, "value": env.value} for env in container.env or []],
+                "readinessProbe": container.readiness_probe.http_get.path if container.readiness_probe and container.readiness_probe.http_get else None,
+                "livenessProbe": container.liveness_probe.http_get.path if container.liveness_probe and container.liveness_probe.http_get else None,
+            })
+
+
+
         pod_info.append({
             "name": pod.metadata.name,
             "status": pod.status.phase,
             "namespace": pod.metadata.namespace,
             "node_name": pod.spec.node_name,
+
+            #New fields that are possibly in the kube information
+            "status": pod.status.phase,
+            "volumes": [{"name": vol.name, "type": vol.secret.secret_name if vol.secret else "persistentVolume"} for vol in pod.spec.volumes or []],
+            "volumeMounts": [{"name": mount.name, "mountPath": mount.mount_path} for container in pod.spec.containers for mount in container.volume_mounts or []],
+            "containers": containers,
         })
     return pod_info
 
