@@ -1,0 +1,596 @@
+{
+  "Cluster Info": {
+    "nodes": [
+      {
+        "name": "minikube",
+        "status": "Ready",
+        "role": "unknown"
+      }
+    ],
+    "pods": [
+      {
+        "name": "harbor-core-678cfbcf4f-4knlw",
+        "status": "Running",
+        "namespace": "default",
+        "node_name": "minikube",
+        "volumes": [
+          {
+            "name": "config",
+            "type": "persistentVolume"
+          },
+          {
+            "name": "secret-key",
+            "type": "harbor-core"
+          },
+          {
+            "name": "token-service-private-key",
+            "type": "harbor-core"
+          },
+          {
+            "name": "ca-download",
+            "type": "harbor-ingress"
+          },
+          {
+            "name": "psc",
+            "type": "persistentVolume"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "config",
+            "mountPath": "/etc/core/app.conf"
+          },
+          {
+            "name": "secret-key",
+            "mountPath": "/etc/core/key"
+          },
+          {
+            "name": "token-service-private-key",
+            "mountPath": "/etc/core/private_key.pem"
+          },
+          {
+            "name": "ca-download",
+            "mountPath": "/etc/core/ca"
+          },
+          {
+            "name": "psc",
+            "mountPath": "/etc/core/token"
+          }
+        ],
+        "containers": [
+          {
+            "name": "core",
+            "image": "goharbor/harbor-core:v2.12.0",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [
+              {
+                "name": "CORE_SECRET",
+                "value": null
+              },
+              {
+                "name": "JOBSERVICE_SECRET",
+                "value": null
+              }
+            ],
+            "readinessProbe": "/api/v2.0/ping",
+            "livenessProbe": "/api/v2.0/ping"
+          }
+        ]
+      },
+      {
+        "name": "harbor-database-0",
+        "status": "Running",
+        "namespace": "default",
+        "node_name": "minikube",
+        "volumes": [
+          {
+            "name": "database-data",
+            "type": "persistentVolume"
+          },
+          {
+            "name": "shm-volume",
+            "type": "persistentVolume"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "database-data",
+            "mountPath": "/var/lib/postgresql/data"
+          },
+          {
+            "name": "shm-volume",
+            "mountPath": "/dev/shm"
+          }
+        ],
+        "containers": [
+          {
+            "name": "database",
+            "image": "goharbor/harbor-db:v2.12.0",
+            "ports": [],
+            "env": [
+              {
+                "name": "PGDATA",
+                "value": "/var/lib/postgresql/data/pgdata"
+              }
+            ],
+            "readinessProbe": null,
+            "livenessProbe": null
+          }
+        ]
+      },
+      {
+        "name": "harbor-jobservice-64c878dbf5-qnk2k",
+        "status": "Running",
+        "namespace": "default",
+        "node_name": "minikube",
+        "volumes": [
+          {
+            "name": "jobservice-config",
+            "type": "persistentVolume"
+          },
+          {
+            "name": "job-logs",
+            "type": "persistentVolume"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "jobservice-config",
+            "mountPath": "/etc/jobservice/config.yml"
+          },
+          {
+            "name": "job-logs",
+            "mountPath": "/var/log/jobs"
+          }
+        ],
+        "containers": [
+          {
+            "name": "jobservice",
+            "image": "goharbor/harbor-jobservice:v2.12.0",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [
+              {
+                "name": "CORE_SECRET",
+                "value": null
+              }
+            ],
+            "readinessProbe": "/api/v1/stats",
+            "livenessProbe": "/api/v1/stats"
+          }
+        ]
+      },
+      {
+        "name": "harbor-portal-5c876957c9-jb59r",
+        "status": "Running",
+        "namespace": "default",
+        "node_name": "minikube",
+        "volumes": [
+          {
+            "name": "portal-config",
+            "type": "persistentVolume"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "portal-config",
+            "mountPath": "/etc/nginx/nginx.conf"
+          }
+        ],
+        "containers": [
+          {
+            "name": "portal",
+            "image": "goharbor/harbor-portal:v2.12.0",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [],
+            "readinessProbe": "/",
+            "livenessProbe": "/"
+          }
+        ]
+      },
+      {
+        "name": "harbor-redis-0",
+        "status": "Running",
+        "namespace": "default",
+        "node_name": "minikube",
+        "volumes": [
+          {
+            "name": "data",
+            "type": "persistentVolume"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "data",
+            "mountPath": "/var/lib/redis"
+          }
+        ],
+        "containers": [
+          {
+            "name": "redis",
+            "image": "goharbor/redis-photon:v2.12.0",
+            "ports": [],
+            "env": [],
+            "readinessProbe": null,
+            "livenessProbe": null
+          }
+        ]
+      },
+      {
+        "name": "harbor-registry-6c78484589-fvmkw",
+        "status": "Running",
+        "namespace": "default",
+        "node_name": "minikube",
+        "volumes": [
+          {
+            "name": "registry-htpasswd",
+            "type": "harbor-registry-htpasswd"
+          },
+          {
+            "name": "registry-config",
+            "type": "persistentVolume"
+          },
+          {
+            "name": "registry-data",
+            "type": "persistentVolume"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "registry-data",
+            "mountPath": "/storage"
+          },
+          {
+            "name": "registry-htpasswd",
+            "mountPath": "/etc/registry/passwd"
+          },
+          {
+            "name": "registry-config",
+            "mountPath": "/etc/registry/config.yml"
+          },
+          {
+            "name": "registry-data",
+            "mountPath": "/storage"
+          },
+          {
+            "name": "registry-config",
+            "mountPath": "/etc/registry/config.yml"
+          },
+          {
+            "name": "registry-config",
+            "mountPath": "/etc/registryctl/config.yml"
+          }
+        ],
+        "containers": [
+          {
+            "name": "registry",
+            "image": "goharbor/registry-photon:v2.12.0",
+            "ports": [
+              {
+                "containerPort": 5000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 5001,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [],
+            "readinessProbe": "/",
+            "livenessProbe": "/"
+          },
+          {
+            "name": "registryctl",
+            "image": "goharbor/harbor-registryctl:v2.12.0",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [
+              {
+                "name": "CORE_SECRET",
+                "value": null
+              },
+              {
+                "name": "JOBSERVICE_SECRET",
+                "value": null
+              }
+            ],
+            "readinessProbe": "/api/health",
+            "livenessProbe": "/api/health"
+          }
+        ]
+      },
+      {
+        "name": "harbor-trivy-0",
+        "status": "Running",
+        "namespace": "default",
+        "node_name": "minikube",
+        "volumes": [
+          {
+            "name": "data",
+            "type": "persistentVolume"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "data",
+            "mountPath": "/home/scanner/.cache"
+          }
+        ],
+        "containers": [
+          {
+            "name": "trivy",
+            "image": "goharbor/trivy-adapter-photon:v2.12.0",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [
+              {
+                "name": "HTTP_PROXY",
+                "value": null
+              },
+              {
+                "name": "HTTPS_PROXY",
+                "value": null
+              },
+              {
+                "name": "NO_PROXY",
+                "value": "harbor-core,harbor-jobservice,harbor-database,harbor-registry,harbor-portal,harbor-trivy,harbor-exporter,127.0.0.1,localhost,.local,.internal"
+              },
+              {
+                "name": "SCANNER_LOG_LEVEL",
+                "value": "info"
+              },
+              {
+                "name": "SCANNER_TRIVY_CACHE_DIR",
+                "value": "/home/scanner/.cache/trivy"
+              },
+              {
+                "name": "SCANNER_TRIVY_REPORTS_DIR",
+                "value": "/home/scanner/.cache/reports"
+              },
+              {
+                "name": "SCANNER_TRIVY_DEBUG_MODE",
+                "value": "false"
+              },
+              {
+                "name": "SCANNER_TRIVY_VULN_TYPE",
+                "value": "os,library"
+              },
+              {
+                "name": "SCANNER_TRIVY_TIMEOUT",
+                "value": "5m0s"
+              },
+              {
+                "name": "SCANNER_TRIVY_GITHUB_TOKEN",
+                "value": null
+              },
+              {
+                "name": "SCANNER_TRIVY_SEVERITY",
+                "value": "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"
+              },
+              {
+                "name": "SCANNER_TRIVY_IGNORE_UNFIXED",
+                "value": "false"
+              },
+              {
+                "name": "SCANNER_TRIVY_SKIP_UPDATE",
+                "value": "false"
+              },
+              {
+                "name": "SCANNER_TRIVY_SKIP_JAVA_DB_UPDATE",
+                "value": "false"
+              },
+              {
+                "name": "SCANNER_TRIVY_OFFLINE_SCAN",
+                "value": "false"
+              },
+              {
+                "name": "SCANNER_TRIVY_SECURITY_CHECKS",
+                "value": "vuln"
+              },
+              {
+                "name": "SCANNER_TRIVY_INSECURE",
+                "value": "false"
+              },
+              {
+                "name": "SCANNER_API_SERVER_ADDR",
+                "value": ":8080"
+              },
+              {
+                "name": "SCANNER_REDIS_URL",
+                "value": null
+              },
+              {
+                "name": "SCANNER_STORE_REDIS_URL",
+                "value": null
+              },
+              {
+                "name": "SCANNER_JOB_QUEUE_REDIS_URL",
+                "value": null
+              }
+            ],
+            "readinessProbe": "/probe/ready",
+            "livenessProbe": "/probe/healthy"
+          }
+        ]
+      }
+    ],
+    "deployments": [
+      {
+        "name": "harbor-core",
+        "replicas": 1,
+        "available_replicas": 1,
+        "namespace": "default"
+      },
+      {
+        "name": "harbor-jobservice",
+        "replicas": 1,
+        "available_replicas": 1,
+        "namespace": "default"
+      },
+      {
+        "name": "harbor-portal",
+        "replicas": 1,
+        "available_replicas": 1,
+        "namespace": "default"
+      },
+      {
+        "name": "harbor-registry",
+        "replicas": 1,
+        "available_replicas": 1,
+        "namespace": "default"
+      }
+    ],
+    "services": [
+      {
+        "name": "harbor-core",
+        "type": "ClusterIP",
+        "cluster_ip": "10.96.62.234",
+        "ports": [
+          {
+            "name": "http-web",
+            "protocol": "TCP",
+            "port": 80,
+            "target_port": 8080,
+            "node_port": null,
+            "app_protocol": null
+          }
+        ]
+      },
+      {
+        "name": "harbor-database",
+        "type": "ClusterIP",
+        "cluster_ip": "10.102.62.164",
+        "ports": [
+          {
+            "name": null,
+            "protocol": "TCP",
+            "port": 5432,
+            "target_port": 5432,
+            "node_port": null,
+            "app_protocol": null
+          }
+        ]
+      },
+      {
+        "name": "harbor-jobservice",
+        "type": "ClusterIP",
+        "cluster_ip": "10.97.135.252",
+        "ports": [
+          {
+            "name": "http-jobservice",
+            "protocol": "TCP",
+            "port": 80,
+            "target_port": 8080,
+            "node_port": null,
+            "app_protocol": null
+          }
+        ]
+      },
+      {
+        "name": "harbor-portal",
+        "type": "ClusterIP",
+        "cluster_ip": "10.104.22.55",
+        "ports": [
+          {
+            "name": null,
+            "protocol": "TCP",
+            "port": 80,
+            "target_port": 8080,
+            "node_port": null,
+            "app_protocol": null
+          }
+        ]
+      },
+      {
+        "name": "harbor-redis",
+        "type": "ClusterIP",
+        "cluster_ip": "10.97.241.114",
+        "ports": [
+          {
+            "name": null,
+            "protocol": "TCP",
+            "port": 6379,
+            "target_port": 6379,
+            "node_port": null,
+            "app_protocol": null
+          }
+        ]
+      },
+      {
+        "name": "harbor-registry",
+        "type": "ClusterIP",
+        "cluster_ip": "10.100.48.15",
+        "ports": [
+          {
+            "name": "http-registry",
+            "protocol": "TCP",
+            "port": 5000,
+            "target_port": 5000,
+            "node_port": null,
+            "app_protocol": null
+          },
+          {
+            "name": "http-controller",
+            "protocol": "TCP",
+            "port": 8080,
+            "target_port": 8080,
+            "node_port": null,
+            "app_protocol": null
+          }
+        ]
+      },
+      {
+        "name": "harbor-trivy",
+        "type": "ClusterIP",
+        "cluster_ip": "10.110.148.39",
+        "ports": [
+          {
+            "name": "http-trivy",
+            "protocol": "TCP",
+            "port": 8080,
+            "target_port": 8080,
+            "node_port": null,
+            "app_protocol": null
+          }
+        ]
+      },
+      {
+        "name": "kubernetes",
+        "type": "ClusterIP",
+        "cluster_ip": "10.96.0.1",
+        "ports": [
+          {
+            "name": "https",
+            "protocol": "TCP",
+            "port": 443,
+            "target_port": 8443,
+            "node_port": null,
+            "app_protocol": null
+          }
+        ]
+      }
+    ]
+  }
+}

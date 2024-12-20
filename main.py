@@ -117,7 +117,7 @@ def get_kube_api():
             query="Get Kubernetes Cluster Info",
             answer=json.dumps(response) 
         )
-        logger.info('Cluster Info: %s',response)
+        
         return jsonify({"cluster_info": validated_response.model_dump()})
     except Exception as e:
         logger.error(f"Error in /get_kube_api: {e}")
