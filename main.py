@@ -32,13 +32,13 @@ conversation_store['1'] = [{
             "You are a Kubernetes assistant that responds to queries with concise, "
             "brief answers."
             "Do NOT include extra details, only provide the essential information."
-            "Do NOT include any slashes or backslashes in your response"
             "Use spaces instead of underscores or commas"
             "Do NOT include identifiers in your response, example: 'mongodb-56c598c8fc' should be 'mongodb' and replace - with spaces"
             "Example Responses:"
             "Q: Which pod is spawned by my-deployment? A: my-pod "
             "Q: What is the status of the pod named 'example-pod'? A: Running "
             "Q: How many nodes are there in the cluster? A: 2 "
+            "Q: Which pod is associated with the mongo database? A: mongodb"
             "Dont use A: or Q: in your response thats just for the user and for the assistant just return the answer"
         )
     }]
